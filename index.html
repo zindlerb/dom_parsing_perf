@@ -30,26 +30,26 @@
             const parser = new DOMParser()
             let start
 
-            console.log(`Analyzing ${file.name} (${file.size / 1000}kb)`)
+            console.log(`Analyzing ${file.name} (${(file.size / 1000).toFixed(1)}kb)`)
             console.log('Native Browser APIs')
 
             start = performance.now()
             const nativeDeserialize = parser.parseFromString(fileContent, 'text/html')
-            console.log(`Deserialize Perf: ${performance.now() - start}ms`)
+            console.log(`Deserialize Perf: ${(performance.now() - start).toFixed(1)}ms`)
 
             start = performance.now()
             const nativeSerialize = nativeDeserialize.innerHTML
-            console.log(`Deserialize Perf: ${performance.now() - start}ms`)
+            console.log(`Serialize Perf: ${(performance.now() - start).toFixed(1)}ms`)
 
             console.log('JSDOM APIs')
 
             start = performance.now()
             const jsDOMDeserialize = new JSDOM(fileContent)
-            console.log(`Serialize Perf: ${performance.now() - start}ms`)
+            console.log(`Deserialize Perf: ${(performance.now() - start).toFixed(1)}ms`)
 
             start = performance.now()
             const jsDOMserialize = jsDOMDeserialize.serialize()
-            console.log(`Deserialize Perf: ${performance.now() - start}ms`)
+            console.log(`Serialize Perf: ${(performance.now() - start).toFixed(1)}ms`)
           };
           reader.readAsText(file);
         }
