@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm install && open index.html"
+    "start": "open index.html"
   },
   "author": "",
   "license": "ISC",

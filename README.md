@@ -5,5 +5,4 @@ Results are reported in the console.
 
 ## How To Run:
 
-In the terminal run:
-`npm start`
+In the terminal run: `npm start` or just open `index.html`.
